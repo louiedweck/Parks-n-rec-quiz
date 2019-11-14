@@ -30,7 +30,7 @@ def question_2():
     user_guess = input(''' Which former Presidential candidate did Leslie encounter in the Hay Adams Hotel in the episode 'Miss Knope Goes to Washington?
             a. Mitt Romney
             b. Al Gore
-            c. John Mccain 
+            c. John Mccain
             d. Joe Biden
             e. Dick Cheney
         Answer: (Type in letter of answer) ''')
@@ -40,23 +40,23 @@ def question_2():
     else:
         print(
             "Incorrect. Leslie meets Joe Biden during her trip to the Nation's capital. .")
+
     return user_guess
 
 
 def question_3():
-    user_guess = input('''True or False. Parks and Recreation aired on ABC. Enter 1 for True or 0 for False
-        Answer: ''')
-    if user_guess == '1':
-        bool("0" or "false")
-        answers_correct.append(" Joe-Biden ")
-        print("Nice! That was the correct answer. The answer is Joe Biden. ")
+    user_guess = int(input('''True or False. Parks and Recreation aired on ABC. Enter 1 for True or 0 for False
+        Answer: '''))
+    correct_answer = 0
+    if user_guess == correct_answer:
+        answers_correct.append(" 0 ")
+        print("Nice! That was the correct answer. The show aired on NBC. ")
     else:
-        bool()
-        print("Incorrect. Leslie meets Joe Biden during her trip to the Nation's capital. ")
+        print("Incorrect. The show aired on NBC. ")
     return user_guess
 
 
 question_1()
 question_2()
 question_3()
-print(answers_correct)
+print("You got " + str(len(answers_correct)) + " answers correct.")
