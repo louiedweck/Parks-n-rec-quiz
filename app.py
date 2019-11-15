@@ -49,14 +49,26 @@ def question_3():
         Answer: '''))
     correct_answer = 0
     if user_guess == correct_answer:
-        answers_correct.append(" 0 ")
-        print("Nice! That was the correct answer. The show aired on NBC. ")
+        answers_correct.append(user_guess)
+        return 1
     else:
-        print("Incorrect. The show aired on NBC. ")
+        return 0
+
+
+def question_4():
+    user_guess = int(input('''True or False. 5000 candles in the wind is a song about a horse. Enter 1 for True or 0 for False
+        Answer: '''))
+    correct_answer = 1
+    if user_guess == correct_answer:
+        answers_correct.append(user_guess)
+        return 1
+    else:
+        return 0
     return user_guess
 
 
 question_1()
 question_2()
 question_3()
+question_4()
 print("You got " + str(len(answers_correct)) + " answers correct.")
