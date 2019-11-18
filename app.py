@@ -8,6 +8,7 @@ def valid_input(prompt, options):
 
 
 answers_correct = []
+answers_incorrect = []
 
 
 def question_1():
@@ -24,6 +25,7 @@ def question_1():
         print("Nice! That was the correct answer.The fictional town of Pawnee is located in Indiana")
     else:
         print("Incorrect. The fictional town of Pawnee is located in Indiana.")
+        answers_incorrect.append(user_guess)
     return user_guess
 
 
@@ -40,6 +42,7 @@ def question_2():
         answers_correct.append(" Joe-Biden ")
         print("Nice! That was the correct answer. The answer is Joe Biden. ")
     else:
+        answers_incorrect.append(user_guess)
         print(
             "Incorrect. Leslie meets Joe Biden during her trip to the Nation's capital. .")
 
@@ -55,6 +58,7 @@ def question_3():
         print("Correct! It aired on NBC.")
         return 1
     else:
+        answers_incorrect.append(user_guess)
         print("Incorrect! It aired on NBC.")
         return 0
 
@@ -68,6 +72,7 @@ def question_4():
         print("Correct! Lil Sebastian is always in our hearts.")
         return 1
     else:
+        answers_incorrect.append(user_guess)
         print("Incorrect.")
         return 0
 
@@ -79,6 +84,7 @@ def question_5():
     if user_guess == correct_answer:
         answers_correct.append(user_guess)
     else:
+        answers_incorrect.append(user_guess)
         print("Ron actually had 2 ex-wives, both named Tammy.")
     return user_guess
 
@@ -90,6 +96,7 @@ def question_6():
     if user_guess == correct_answer:
         answers_correct.append(user_guess)
     else:
+        answers_incorrect.append(user_guess)
         print("Wrong")
     return user_guess
 
@@ -101,4 +108,12 @@ if __name__ == "__main__":
     question_4()
     question_5()
     question_6()
-    print("You got " + str(len(answers_correct)) + " answers correct.")
+    if len(answers_correct) >= 4:
+        print("You got" + str(len(answers_correct)) +
+              "answers correct. You must be a big fanm to get that many right.")
+    else:
+        print("You got " + str(len(answers_correct)) +
+              " answers correct. Please play again. You cannot get this unlucky twice.")
+
+    print("These are the answers you guessed correctly: " + str(answers_correct))
+    print("These are the answers you gussed incorrectly: " + str(answers_incorrect))
